@@ -25,7 +25,7 @@ let movies =[
         image: "/styles/images/slider 5.PNG"
     },
 ]
-const caraousel=document.querySelector('.caraousel');
+const carousel=document.querySelector('.caraousel');
 let sliders=[];
 let slideindex=0; //track the current  slide
 const createslide =()=> {
@@ -46,23 +46,24 @@ const createslide =()=> {
     content.appendChild(h1);
     content.appendChild(p);
     slide.appendChild(imgelement);
-    caraousel.appendChild(slide);
+    carousel.appendChild(slide);
 
     //setting up images
     imgelement.src = movies[slideindex].image;
     slideindex++
 
     //setting elements classnames
-    slide.className = 'slider';
-    content.className = 'slide-content';
-    h1.className = 'movie-title';
-    p.className = 'movies-des';
+    slide.className = "slider";
+    content.className = "slide-content";
+    h1.className = "movies-title";
+    p.className = "movies-des";
+    
     sliders.push(slide);
 
-    if (slide.length) {
-        sliders[0].style.marginLeft = `calc(-${100 * (sliders.length - 2)}% -${30 * (sliders.length - 2)}px)`;
+    if (sliders.length) {
+        sliders[0].style.marginLeft = `calc(-${100*(sliders.length - 2)}% - ${30*(sliders.length - 2)}px)`;
     }
-};
+}
 for(let i=0; i<3; i++){
     createslide();
 }
