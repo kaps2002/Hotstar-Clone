@@ -45,6 +45,7 @@ const createslide=()=>{
     p.appendChild(document.createTextNode(movies[slideindex].des));
     content.appendChild(h1);
     content.appendChild(p);
+    slide.appendChild(content)
     slide.appendChild(imgElement);
     carousel.appendChild(slide);
 
