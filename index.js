@@ -28,35 +28,35 @@ let movies =[
 const carousel=document.querySelector('.caraousel');
 let sliders=[];
 let slideindex=0; //track the current  slide
-function createslide() {
+const createslide=()=>{
     if (slideindex >= movies.length) {
         slideindex = 0;
     }
     //create dom element
     let slide = document.createElement('div');
-    var imgelement = document.createElement('img');
+    var imgElement = document.createElement('img');
     let content = document.createElement('div');
     let h1 = document.createElement('h1');
     let p = document.createElement('p');
 
     //attaching all elements
-    imgelement.appendChild(document.createTextNode(''));
+    imgElement.appendChild(document.createTextNode(''));
     h1.appendChild(document.createTextNode(movies[slideindex].name));
     p.appendChild(document.createTextNode(movies[slideindex].des));
     content.appendChild(h1);
     content.appendChild(p);
-    slide.appendChild(imgelement);
+    slide.appendChild(imgElement);
     carousel.appendChild(slide);
 
     //setting up images
-    imgelement.src = movies[slideindex].image;
-    slideindex++;
+    imgElement.src = movies[slideindex].image;
+    slideindex++
 
     //setting elements classnames
-    slide.className = "slider";
-    content.className = "slide-content";
-    h1.className = "movies-title";
-    p.className = "movies-des";
+    slide.className = 'slider';
+    content.className = 'slide-content';
+    h1.className = 'movie-title';
+    p.className = 'movie-des';
 
     sliders.push(slide);
 

@@ -122,14 +122,14 @@ body{
     height: 100%;
     z-index: 2;
     color:white;
-    background: linear-gradient(to right, #030b17 80%,#0c111b00);
+    background: linear-gradient(to right, #030b17 80%, #0c111b00);
 }
-.movies-title{
+.movie-title{
     padding-left: 50px;
     text-transform: capitalize;
     margin-top: 80px;
 }
-.movies-des{
+.movie-des{
     width: 80%;
     line-height: 30px;
     padding-left: 50px;
