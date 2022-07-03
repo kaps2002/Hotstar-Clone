@@ -83,3 +83,17 @@ videocards.forEach(item =>{
     });
 })
 
+//card sliders
+let cardcontainer=[...document.querySelectorAll('.card-container')];
+let prebtns=[...document.querySelectorAll('.pre-btn')];
+let nxtbtns=[...document.querySelectorAll('.nxt-btn')];
+cardcontainer.forEach((items,i)=>{
+    let containerdimensions= items.getBoundingClientRect();
+    let containerwidth= containerdimensions.width;
+    nxtbtns[i].addEventListener('click',()=>{
+        items.scrollLeft += containerwidth-200;
+    });
+    prebtns[i].addEventListener('click',()=>{
+        items.scrollLeft -= containerwidth+200;
+    });
+});
