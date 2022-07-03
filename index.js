@@ -28,7 +28,7 @@ let movies =[
 const carousel=document.querySelector('.caraousel');
 let sliders=[];
 let slideindex=0; //track the current  slide
-const createslide =()=> {
+function createslide() {
     if (slideindex >= movies.length) {
         slideindex = 0;
     }
@@ -50,18 +50,18 @@ const createslide =()=> {
 
     //setting up images
     imgelement.src = movies[slideindex].image;
-    slideindex++
+    slideindex++;
 
     //setting elements classnames
     slide.className = "slider";
     content.className = "slide-content";
     h1.className = "movies-title";
     p.className = "movies-des";
-    
+
     sliders.push(slide);
 
     if (sliders.length) {
-        sliders[0].style.marginLeft = `calc(-${100*(sliders.length - 2)}% - ${30*(sliders.length - 2)}px)`;
+        sliders[0].style.marginLeft = `calc(-${100 * (sliders.length - 2)}% - ${30 * (sliders.length - 2)}px)`;
     }
 }
 for(let i=0; i<3; i++){
@@ -70,5 +70,16 @@ for(let i=0; i<3; i++){
 setInterval(()=>{
     createslide();
 },3000);
-
+//videocards
+const videocards=[...document.querySelectorAll('.video-card')];
+videocards.forEach(item =>{
+    item.addEventListener('mouseover',()=>{
+        let video =item.children[1];
+        video.play();
+    })
+    item.addEventListener('mouseleave',()=>{
+        let video =item.children[1];
+        video.pause();
+    });
+})
 
